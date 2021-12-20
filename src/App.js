@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import MainPage from "./components/MainPage"
+import Sessions from "./components/Sessions"
+import Seats from "./components/Seats"
+import { BrowserRouter, Routes, Route, Link, useParams } from "react-router-dom"
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+			<Routes>
+				<Route path="/" element={<MainPage/>}></Route>
+        <Route path="/sessoes/:idMovie" element={<Sessions/>}></Route>
+        <Route path="/assentos/:idSessao" element={<Seats/>}></Route>
+				
+			</Routes>
+		</BrowserRouter>
+    
   );
 }
 

@@ -1,0 +1,221 @@
+.mobileLayout
+{
+    width: 500px;
+    margin: auto;
+}
+
+.topBar
+{
+    width: 100%;
+    height: 100px;
+    background-color: #C3CFD9;
+    top: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #E8833A;
+    font-size: 40px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.titleBar
+{
+    width: 100%;
+    height: 120px;
+    top: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #293845;
+    font-size: 25px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.displayMovies
+{
+    background-color: white;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.displayMovies div
+{
+    width: 200px;
+    height: 300px;
+    margin-left: 33px;
+    margin-top: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+}
+
+.displayMovies div img
+{
+    width: 180px;
+    height: 280px;
+    margin-top: 10px;
+}
+
+.bottomBar
+{
+
+    margin-top: 50px;
+    margin: auto;
+    width: 500px;
+    height: 150px;
+    background-color: #C3CFD9;
+    font-family: 'Roboto', sans-serif;
+    color: #293845;
+    font-size: 40px;
+    display: flex;
+}
+
+.bottomBar img
+{
+    height: 130px;
+    width: 90px;
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+
+.bottomBar div
+{
+    margin-left: 30px;
+    margin-top: 30px;
+    width: 300px;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    color: #293845;
+}
+
+.dayDisplay
+{
+    width: 400px;
+    margin-left: 50px;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    color: #293845;
+}
+
+.movieTimes
+{
+    margin-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movieTime
+{
+    width: 120px;
+    height: 50px;
+    color: white;
+    background-color: #E8833A;
+    margin-left: 10px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.noFlex
+{
+    display: grid;
+}
+
+.noFlex div
+{
+    margin-top: 0;
+}
+
+.displaySeats
+{
+    display: flex;
+    flex-wrap: wrap;
+    width: 450px;
+    margin: auto;
+    
+}
+
+.seat
+{
+    height: 35px;
+    width: 35px;
+    border: 1px solid #808F9D;
+    border-radius: 50%;
+    margin-left: 8px;
+    margin-top: 8px;
+    text-align: center;
+    line-height: 35px;
+}
+
+.available
+{
+    background: #C3CFD9;
+}
+
+.unavailable
+{
+    background: #FBE192;
+}
+
+.selected
+{
+    background: #8DD7CF;
+}
+
+.tips
+{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.tipsContent
+{
+    display: grid;
+    text-align: center;
+    width: 70px;
+}
+
+.tipsContent .seat
+{
+    margin: auto;
+}
+
+.textBoxes
+{
+    padding-top: 50px;
+    display: grid;
+    width: 450px;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    color: #293845;
+    font-size: 25px;
+}
+
+.textBoxes input
+{
+    height: 70px;
+    margin-top: 0;
+    font-size: 25px;
+}
+
+
+.finishButton
+{
+    width: 200px;
+    height: 60px;
+    border-radius: 15px;
+    margin: auto;
+    background: #E8833A;
+    color: white;
+    margin-top: 75px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 60px;
+}
