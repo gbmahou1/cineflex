@@ -8,7 +8,8 @@ import SeatItem from './SeatItem';
 function Seats()
 {
 
-    const params = useParams();
+    
+ const params = useParams();
 
     const [seats, setSeats] = useState([]);
 
@@ -19,10 +20,11 @@ function Seats()
 			setSeats(answer.data);
             
 		});
-	}, []);
+	}, []);   
 
     const [nome, setNome] = useState("");
     const [cpf, setCpf] = useState("");
+    
     const [SelectedList, setSelectedList] = useState([]);
 
     function getName (name)
@@ -38,16 +40,17 @@ function Seats()
 
     function send ()
     {
-        axios.post('https://mock-api.driven.com.br/api/v4/cineflex/seats/book-many', {data})
+       axios.post("https://mock-api.driven.com.br/api/v4/cineflex/seats/book-many", data)
         .then(res => {
             console.log(res);
             console.log(res.data);
-          })
-
-          window.location.href = `/sucesso`;
+            window.location.href = `/sucesso/${params.idSessao}`;})
+            console.log(data);
     }
 
     const data = {ids: SelectedList, name: nome, cpf: cpf};
+
+    
 
     if(seats.length != 0)
     return(
