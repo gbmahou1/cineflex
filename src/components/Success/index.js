@@ -7,6 +7,7 @@ import './styles.css';
 export default function Success()
 {
     const params = useParams();
+    console.log(params);
 
 
     return (

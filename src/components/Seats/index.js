@@ -7,9 +7,7 @@ import SeatItem from './SeatItem';
 
 function Seats()
 {
-
-    
- const params = useParams();
+    const params = useParams();
 
     const [seats, setSeats] = useState([]);
 
@@ -44,11 +42,13 @@ function Seats()
         .then(res => {
             console.log(res);
             console.log(res.data);
-            window.location.href = `/sucesso/${params.idSessao}`;})
+            window.location.href = `/sucesso`;})
             console.log(data);
     }
 
     const data = {ids: SelectedList, name: nome, cpf: cpf};
+
+    /*const sucessodata = {name: nome, cpf: cpf, movie: seats.movie.title, weekday: seats.day.weekday, day: seats.day.date};*/
 
     
 
