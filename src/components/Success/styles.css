@@ -223,7 +223,6 @@
 .successHead
 {
     padding-top: 50px;
-    padding-bottom: 50px;
     width: 40%;
     height: 120px;
     top: 0;
@@ -234,4 +233,29 @@
     font-size: 30px;
     text-align: center;
 
+}
+
+.topic
+{
+    margin-top: 80px;
+    margin-left: 50px;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    color: #293845;
+    font-weight: bolder;
+}
+
+.homeButton
+{
+    width: 200px;
+    height: 60px;
+    border-radius: 15px;
+    margin: auto;
+    background: #E8833A;
+    color: white;
+    margin-bottom: 50px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 60px;
+    margin-top: 80px;
 }
