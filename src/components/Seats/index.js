@@ -9,7 +9,6 @@ function Seats()
 {
 
     const params = useParams();
-    console.log(params);
 
     const [seats, setSeats] = useState([]);
 
@@ -22,30 +21,33 @@ function Seats()
 		});
 	}, []);
 
-    let nome = "";
-    let cpf = "";
-    let allselected = [];
+    const [nome, setNome] = useState("");
+    const [cpf, setCpf] = useState("");
+    const [SelectedList, setSelectedList] = useState([]);
 
     function getName (name)
     {
-        nome = name;
+        setNome(name);
     }
 
     function getCPF (CPF)
     {
-        cpf = CPF;
+        setCpf(CPF);
+        console.log(data);
     }
 
-    function send()
+    function send ()
     {
-        var elements = document.getElementsByClassName("selected");
+        axios.post('https://mock-api.driven.com.br/api/v4/cineflex/seats/book-many', {data})
+        .then(res => {
+            console.log(res);
+            console.log(res.data);
+          })
 
-        for (let i=0; i<elements.length; i++)
-        {
-            allselected.push(elements[i].id);
-        }
-        console.log(allselected);
+          window.location.href = `/sucesso`;
     }
+
+    const data = {ids: SelectedList, name: nome, cpf: cpf};
 
     if(seats.length != 0)
     return(
@@ -58,7 +60,7 @@ function Seats()
 
             <div className="displaySeats">
             
-                {seats.seats.map(seat => <SeatItem id={seat.id} isAvailable={seat.isAvailable} name={seat.name}/>)}
+                {seats.seats.map(seat => <SeatItem id={seat.id} isAvailable={seat.isAvailable} name={seat.name} SelectedList={SelectedList} setSelectedList={setSelectedList}/>)}
 
             </div>
 
@@ -80,20 +82,13 @@ function Seats()
 
             <div className="textBoxes">
                 Nome do comprador:
-                <input type="text" onKeyDown={getName(this.value)} placeholder="        Digite seu nome..."></input>
+                <input type="text" onInput={event => getName(event.target.value)} placeholder="        Digite seu nome..."></input>
                 CPF do comprador
-                <input type="text" onKeyDown={getCPF(this.value)} placeholder="        Digite seu CPF..."></input>
+                <input type="text" onInput={event => getCPF(event.target.value)} placeholder="        Digite seu CPF..."></input>
 
             </div>
 
-            <div onClick={send()} class="finishButton">Reservar assento(s)</div>
-
-            
-
-            
-
-
-
+            <div onClick={() => send()} className="finishButton">Reservar assento(s)</div>
 
             <div className="bottomBar">
                 <img src={seats.movie.posterURL}></img>

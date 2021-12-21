@@ -14,10 +14,19 @@ export default function SeatItem(props)
         if (empty == "selected")
         {
             setEmpty("");
+            for (let i=0; i<props.SelectedList.length; i++)
+            {
+                if (props.SelectedList[i]==props.id)
+                {
+                    props.setSelectedList([...props.SelectedList.splice(i, 1)]);
+                }
+            }
         }
         else
         {
             setEmpty("selected");
+            props.setSelectedList([...props.SelectedList, props.id]);
+            
         }
     }
 
